@@ -1,0 +1,27 @@
+{
+  "name": "Kavinda/silvershop-sca-stripe",
+  "description": "",
+  "type": "silverstripe-vendormodule",
+  "keywords": [
+    "silverstripe",
+    "sca",
+    "stripe",
+    "kavinda",
+    "silvershop"
+  ],
+  "license": "",
+  "authors": [
+    {
+      "name": "Kavinda Harshana",
+      "email": "dskharshana@gmail.com"
+    }
+  ],
+  "require": {
+    "silverstripe/framework": "^4.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Kavinda\\SilverShop\\": "src/"
+    }
+  }
+}

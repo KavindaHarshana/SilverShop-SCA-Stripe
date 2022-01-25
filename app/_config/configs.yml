@@ -1,0 +1,14 @@
+SilverStripe\Core\Injector\Injector:
+  SilverShop\Page\CheckoutPageController:
+    class: Kavinda\SilverShop\Controller\SilverShopSCACheckoutPageController
+
+SilverStripe\Omnipay\GatewayInfo:
+  extensions:
+    - Kavinda\SilverShop\Extension\SilverShopSCAGatewayInfoExtension
+
+SilverStripe\Omnipay\Model\Payment:
+  extensions:
+    - Kavinda\SilverShop\Extension\SilverShopSCAPaymentExtension
+
+Kavinda\SilverShop\Extension\SilverShopSCAGatewayInfoExtension:
+  is_support_sca: true
