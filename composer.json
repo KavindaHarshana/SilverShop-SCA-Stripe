@@ -23,5 +23,7 @@
     "psr-4": {
       "Kavinda\\SilverShop\\": "src/"
     }
-  }
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true
 }
