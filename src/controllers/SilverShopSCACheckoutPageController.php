@@ -33,15 +33,11 @@ class SilverShopSCACheckoutPageController extends CheckoutPageController
         'PaymentForm',
     );
 
-    protected function init()
-    {
-        parent::init();
-        Requirements::javascript('https://js.stripe.com/v3/');
-        Requirements::javascript('kavinda/silvershop-sca-stripe:js/payment.js');
-    }
-
     public function PaymentForm()
     {
+        Requirements::javascript('https://js.stripe.com/v3/');
+        Requirements::javascript('kavinda/silvershop-sca-stripe:javascript/payment.js');
+
         if (!(bool)$this->Cart()) {
             return false;
         }
