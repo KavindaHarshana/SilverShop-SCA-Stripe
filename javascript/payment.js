@@ -19,12 +19,7 @@ if (paymentForm) {
     var check;
 
     card.addEventListener('change', ({error}) => {
-        const displayError = document.getElementById('card-errors');
-        if (error) {
-            displayError.textContent = error.message;
-        } else {
-            displayError.textContent = '';
-        }
+        showErrors(error);
     });
 
     paymentForm.addEventListener('submit', function(ev) {
@@ -35,6 +30,7 @@ if (paymentForm) {
             }
         }).then(function(result) {
             if (result.error) {
+                showErrors(result.error);
                 console.log(result.error.message);
             } else {
                 // The payment has been processed!
@@ -46,4 +42,14 @@ if (paymentForm) {
             }
         });
     });
+
+    function showErrors(error)
+    {
+        const displayError = document.getElementById('card-errors');
+        if (error) {
+            displayError.textContent = error.message;
+        } else {
+            displayError.textContent = '';
+        }
+    }
 }
