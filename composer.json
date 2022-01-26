@@ -24,6 +24,11 @@
       "Kavinda\\SilverShop\\": "src/"
     }
   },
+  "extra": {
+    "expose": [
+      "js"
+    ]
+  },
   "minimum-stability": "dev",
   "prefer-stable": true
 }
