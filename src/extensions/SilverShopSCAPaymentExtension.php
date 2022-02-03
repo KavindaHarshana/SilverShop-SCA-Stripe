@@ -24,12 +24,15 @@ class SilverShopSCAPaymentExtension extends DataExtension
     public function onPaymentCaptured($response = null)
     {
         $order = $this->Cart();
-        $order->Status = 'Paid';
+        
         $order->Placed = DBDatetime::now()->Rfc2822();;
-        $order->write();
+        
         if ($order && $order->exists()) {
             OrderProcessor::create($order)->completePayment();
         }
+
+        $order->Status = 'Paid';
+        $order->write();
     }
 
     public function getIdentifierToken()
